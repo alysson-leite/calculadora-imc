@@ -9,8 +9,8 @@ function imc (){
     
 
     if (nome.value !== '' && altura.value !== '' && peso.value !== ''){
-        const valorImc = (peso / (altura * altura)).toFixed(1);
-
+        const valorImc = (peso.value / (altura.value * altura.value)).toFixed(1);
+        
         let classificacao = ''
 
         if(valorImc < 18){
@@ -27,7 +27,9 @@ function imc (){
             classificacao = 'com obesidade grau 3. Você está em uma condição muito grave. Procure ajuda médica!'
         }
 
-        resultado.textContent = `${nome} seu IMC é ${valorImc} e você está ${classificacao}`
+        resultado.textContent = `${nome.value} seu IMC é ${valorImc} e você está ${classificacao}`
+        console.log(nome)
+        console.log(valorImc)
     }else{
         resultado.textContent = 'Preencha todos os campos!!'
     }
